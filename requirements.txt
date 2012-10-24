@@ -1,0 +1,3 @@
+mimeparse==0.1.3
+tapioca==0.1.11
+tornado==2.4
