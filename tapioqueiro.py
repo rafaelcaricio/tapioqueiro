@@ -29,12 +29,12 @@ if __name__ == '__main__':
     main_loop = tornado.ioloop.IOLoop.instance()
 
     api = TornadoRESTful(
-            version='', base_url='http://127.0.0.1:{:d}'.format(port), discovery=True)
+            version='', base_url='http://0.0.0.0:{:d}'.format(port), discovery=True)
     api.add_resource('projects', ProjectsHandler)
     api.add_resource('comments', CommentsHandler)
     application = tornado.web.Application(api.get_url_mapping())
 
     server = HTTPServer(application)
-    server.bind(port, '127.0.0.1')
+    server.bind(port, '0.0.0.0')
     server.start(1)
     main_loop.start()
