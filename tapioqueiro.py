@@ -24,8 +24,8 @@ class CommentsHandler(ResourceHandler):
 
 
 if __name__ == '__main__':
-    import sys
-    port = int(sys.argv[-1])
+    import os
+    port = int(os.environ.get('PORT', 5000))
     main_loop = tornado.ioloop.IOLoop.instance()
 
     api = TornadoRESTful(

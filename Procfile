@@ -1,1 +1,1 @@
-web: python tapioqueiro.py $PORT
+web: python tapioqueiro.py
