@@ -10,19 +10,6 @@ class ProjectsHandler(ResourceHandler):
     def get_collection(self, callback, *args, **kwargs):
         callback([{'params': self.values['querystring']}])
 
-    def get_model(self, key, *args, **kwargs):
-        """Gets an model instance"""
-        return {}
-
-    def update_model(self, key, *args, **kwargs):
-        self.application.db.users.update(key, self.values)
-
-
-class CommentsHandler(ResourceHandler):
-
-    def delete_model(self, key, *args, **kwargs):
-        pass
-
 
 if __name__ == '__main__':
     import os
