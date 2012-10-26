@@ -20,7 +20,6 @@ if __name__ == '__main__':
             base_url='http://tapioqueiro.herokuapp.com', discovery=True, \
             cross_origin_enabled=True)
     api.add_resource('projects', ProjectsHandler)
-    api.add_resource('comments', CommentsHandler)
     application = tornado.web.Application(api.get_url_mapping())
 
     server = HTTPServer(application)
