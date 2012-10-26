@@ -6,7 +6,7 @@ from tapioca import TornadoRESTful, ResourceHandler, validate
 
 class ProjectsHandler(ResourceHandler):
 
-    @validate(querystring={'name': (unicode, 'name of project you want to search')})
+    @validate(querystring={'name': (unicode, 'name of project that do you want to search')})
     def get_collection(self, callback, *args, **kwargs):
         callback([{'params': self.values['querystring']}])
 
