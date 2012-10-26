@@ -1,7 +1,7 @@
 tapioqueiro
 ===========
 
-Sample project using Tapioca RESTful framework.
+Sample project using [Tapioca RESTful framework](https://github.com/globocom/tapioca).
 
 Running at: http://tapioqueiro.herokuapp.com/discovery.wadl
 
