@@ -29,8 +29,9 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     main_loop = tornado.ioloop.IOLoop.instance()
 
-    api = TornadoRESTful(
-            version='', base_url='http://tapioqueiro.herokuapp.com', discovery=True)
+    api = TornadoRESTful(version='', \
+            base_url='http://tapioqueiro.herokuapp.com', discovery=True, \
+            cross_origin_enabled=True)
     api.add_resource('projects', ProjectsHandler)
     api.add_resource('comments', CommentsHandler)
     application = tornado.web.Application(api.get_url_mapping())
