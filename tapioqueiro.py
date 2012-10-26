@@ -1,13 +1,14 @@
 import tornado.ioloop
 from tornado.httpserver import HTTPServer
 
-from tapioca import TornadoRESTful, ResourceHandler
+from tapioca import TornadoRESTful, ResourceHandler, validate
 
 
 class ProjectsHandler(ResourceHandler):
 
+    @validate(querystring={'name': (unicode, 'name of project you want to search')})
     def get_collection(self, callback, *args, **kwargs):
-        callback([])
+        callback([{'params': self.values['querystring']}])
 
     def get_model(self, key, *args, **kwargs):
         """Gets an model instance"""
